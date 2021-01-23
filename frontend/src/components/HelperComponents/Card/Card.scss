@@ -1,0 +1,64 @@
+.Tilt-inner {
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(48, 49, 51, 0.12);
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    .card {
+        width: 100%;
+        > div {
+            margin-top: 7px;
+            padding: 0 15px 0 15px;
+        }
+        > div:first-of-type {
+            margin-top: 0px;
+            padding-top: 20px;
+        }
+        > div:last-of-type {
+            padding-bottom: 10px;
+        }
+        .title {
+            font-family: "RobotoMedium";
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 18px;
+            min-height: 65px;
+        }
+        span {
+            font-family: "RobotoRegular";
+            font-size: 14px;
+        }
+        .img {
+            object-fit: cover;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+            &-photo {
+                width: 150px;
+                height: 150px;
+            }
+            &-logo {
+                position: absolute;
+                top: 10px;
+                right: 8px;
+                width: 50px;
+            }
+        }
+        .weight {
+            > span {
+                font-size: 16px;
+                color: #acacac;
+            }
+        }
+        .price {
+            font-size: 26px;
+            font-family: "RobotoBold";
+        }
+        .card-bottom {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

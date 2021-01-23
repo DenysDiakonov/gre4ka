@@ -1,0 +1,50 @@
+.filters-wrap {
+    position: relative;
+    min-width: 250px !important;
+}
+.filters {
+    position: fixed;
+    height: 300px;
+    min-width: 250px !important;
+    margin-top: 50px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 30px 15px;
+    box-shadow: 0 6px 12px rgba(48, 49, 51, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        > p {
+            font-family: "RobotoMedium";
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        > div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            img {
+                height: 30px;
+                margin-left: 10px;
+            }
+        }
+        > div:last-of-type {
+            margin-bottom: 0px;
+        }
+    }
+
+    .select_component {
+        font-family: "RobotoRegular";
+        width: 100%;
+        .select__control {
+            width: 100%;
+        }
+    }
+}

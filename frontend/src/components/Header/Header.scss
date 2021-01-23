@@ -1,0 +1,21 @@
+.header {
+    height: 70px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(48, 49, 51, 0.08);
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: center /cover no-repeat fixed url("../../assets/images/header-bg.png");
+    > a {
+        margin-left: 75px;
+        display: flex;
+        img {
+            height: 42px;
+        }
+        span {
+            font-family: "Gwent";
+            font-size: 45px;
+        }
+    }
+}
