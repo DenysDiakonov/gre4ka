@@ -2,8 +2,6 @@
 
 ## Gre4ka client
 
-****
-
 ### **Запуск через Docker**
 
  - Собрать образ ```$ docker build -t gre4ka_client ./```

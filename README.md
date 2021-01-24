@@ -1,3 +1,6 @@
+![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
+
 # Gre4ka project
 
 
