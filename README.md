@@ -11,7 +11,8 @@
 
 ### **Запуск**
 
-```$ docker-compose up```
+ - ```$ docker-compose up```
+ - Oткрыть ```http://localhost```
 
 ### **Live demo**
 
