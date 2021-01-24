@@ -5,6 +5,7 @@ import metro from "../../../assets/images/metro-filter.PNG";
 import atb from "../../../assets/images/atb-filter.jpg";
 import novus from "../../../assets/images/novus-filter.PNG";
 import Select from "react-select";
+import silpo from "../../../assets/images/silpo.svg";
 
 const Filters = ({
     atbFilter,
@@ -15,6 +16,8 @@ const Filters = ({
     setMetroFilter,
     sortSelected,
     setSortSelected,
+    setSilpoFilter,
+    silpoFilter
 }) => {
     const handleChange = (selectedOption) => {
         setSortSelected(selectedOption);
@@ -28,18 +31,21 @@ const Filters = ({
     const onChangeNovus = useCallback((event) => {
         setNovusFilter((novusFilter) => !novusFilter);
     }, []);
+    const onChangeSilpo = useCallback((event) => {
+        setSilpoFilter((silpoFilter) => !silpoFilter);
+    }, []);
 
     const options = [
         { value: "price-up", label: "За ціною ▲" },
         { value: "price-down", label: "За ціною ▼" },
         {
             value: "kg-up",
-            label: "За ціною за кг ▲",
+            label: "За ціною за кг ▲"
         },
         {
             value: "kg-down",
-            label: "За ціною за кг ▼",
-        },
+            label: "За ціною за кг ▼"
+        }
     ];
 
     return (
@@ -81,6 +87,18 @@ const Filters = ({
                         />
                         <label htmlFor="novus">
                             <img src={novus} />
+                        </label>
+                    </div>
+                    <div>
+                        <Checkbox
+                            isChecked={silpoFilter}
+                            onChange={onChangeSilpo}
+                            value="Controlled Checkbox"
+                            name="controlled-checkbox"
+                            id="silpo"
+                        />
+                        <label htmlFor="silpo">
+                            <img src={silpo} />
                         </label>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import grechka.proj.kvinz.repository.CustomerRepository;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -27,9 +28,20 @@ public class Gre4kaAdder {
 
     private List<Product> productList = new ArrayList<>();
 
-    @Scheduled(fixedRate = 60*60*6000)
+    private static final String GET_METRO = "https://gre4ka-backend.herokuapp.com/api/metro/";
+
+    private static final String GET_ATB = "https://gre4ka-backend.herokuapp.com/api/atb/";
+
+    private static final String GET_NOVUS = "https://gre4ka-backend.herokuapp.com/api/novus/";
+
+    private static final String GET_SILPO = "https://gre4ka-backend.herokuapp.com/api/silpo/";
+
+    @Scheduled(fixedRate = 6*60*60*1000)
     public void reportCurrentTime(){
-        productList = gre4kaChecker.getGre4ka();
+        productList.addAll(gre4kaChecker.getGre4ka(GET_METRO));
+        productList.addAll(gre4kaChecker.getGre4ka(GET_ATB));
+        productList.addAll(gre4kaChecker.getGre4ka(GET_NOVUS));
+        productList.addAll(gre4kaChecker.getGre4ka(GET_SILPO));
         if(!productList.isEmpty()){
             for(Product product: productList){
                 product.setDateCreated(new Date());

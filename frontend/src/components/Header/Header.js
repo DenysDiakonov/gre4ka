@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import grechka from "../../assets/images/Gre4ka_sm.png";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (

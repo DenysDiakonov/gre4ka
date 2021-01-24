@@ -1,35 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { sendRequest } from "./../../helpers/functions";
+import React from "react";
+
 import Card from "../HelperComponents/Card/Card";
 import "./CardList.scss";
-import { SCRAPERS_API_ENDPOINT } from "../../config";
 
-const CardList = ({ conditionArr, sortOption }) => {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        Promise.all([
-            sendRequest(
-                `${SCRAPERS_API_ENDPOINT}/metro/`,
-                "GET"
-            ),
-            sendRequest(`${SCRAPERS_API_ENDPOINT}/atb/`, "GET"),
-            sendRequest(
-                `${SCRAPERS_API_ENDPOINT}/novus/`,
-                "GET"
-            ),
-        ]).then((res) => setData(res.flat()));
-    }, []);
-    const conditionFunc = (element, length) => {
+const CardList = ({ conditionArr, sortOption, data, setData }) => {
+    const conditionFunc = (element) => {
         if (conditionArr && conditionArr.length === 0) return true;
-        if (conditionArr && conditionArr.length === 1)
-            return element === conditionArr[0];
+        if (conditionArr && conditionArr.length === 1) return element === conditionArr[0];
         if (conditionArr && conditionArr.length === 2)
             return element === conditionArr[0] || element === conditionArr[1];
         if (conditionArr && conditionArr.length === 3)
+            return element === conditionArr[0] || element === conditionArr[1] || element === conditionArr[2];
+        if (conditionArr && conditionArr.length === 4)
             return (
                 element === conditionArr[0] ||
                 element === conditionArr[1] ||
-                element === conditionArr[2]
+                element === conditionArr[2] ||
+                element === conditionArr[3]
             );
     };
     const sortFormatter = (a, b) => {

@@ -1,10 +1,10 @@
 .card-list {
     padding: 50px 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 115px;
-    grid-row-gap: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     > div {
         margin-bottom: 100px !important;
+        padding: 0 50px 50px 50px;
     }
 }

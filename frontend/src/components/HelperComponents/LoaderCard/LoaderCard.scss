@@ -1,0 +1,13 @@
+.loader-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    .img-logo {
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    .check {
+        width: 20px;
+    }
+}

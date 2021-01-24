@@ -32,3 +32,8 @@ async def atb():
 @app.get("/api/novus/")
 async def novus():
     return get_from_spider(NovusSpider)
+
+
+@app.get("/api/silpo/")
+async def silpo():
+    return get_silpo()

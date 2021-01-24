@@ -43,5 +43,9 @@ class ATBSpider(scrapy.Spider):
                 self.data.append(obj)
                 yield obj
 
-        for next_page in response.xpath("//li[@class='page-item next']/a"):
-            yield response.follow(next_page, self.parse)
+        if (
+            response.xpath("//ul[@class='pagination']/*[last()]/@class").get()
+            == "page-item next"
+        ):
+            for next_page in response.xpath("//ul[@class='pagination']/*[last()]/a"):
+                yield response.follow(next_page, self.parse)

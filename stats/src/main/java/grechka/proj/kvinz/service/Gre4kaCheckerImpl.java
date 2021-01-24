@@ -17,42 +17,19 @@ public class Gre4kaCheckerImpl implements Gre4kaChecker {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    private static final String GET_METRO = "http://localhost:8000/api/metro/";
-
-    private static final String GET_ATB = "http://localhost:8000/api/atb/";
-
-    private static final String GET_NOVUS = "http://localhost:8000/api/novus/";
-
     private List<Product> productList = new ArrayList<>();
 
-    private Product[] metroProducts;
-
-    private Product[] atbProducts;
-
-    private Product[] novusProducts;
+    private Product[] products;
 
     @Override
-    public List<Product> getGre4ka() {
-        ResponseEntity<String> responseMetro = restTemplate.getForEntity(GET_METRO,String.class);
-        if(responseMetro.getStatusCode() == HttpStatus.OK){
-            ProductDTO[] metroProductDTOs = restTemplate.getForObject(GET_METRO,ProductDTO[].class);
-            metroProducts = ProductMapper.INSTANCE.productDTOArraytoProduct(metroProductDTOs);
-        }
-        ResponseEntity<String> responseATB = restTemplate.getForEntity(GET_ATB,String.class);
-        if(responseATB.getStatusCode() == HttpStatus.OK){
-            ProductDTO[] atbProductDTOs = restTemplate.getForObject(GET_ATB,ProductDTO[].class);
-            atbProducts = ProductMapper.INSTANCE.productDTOArraytoProduct(atbProductDTOs);
-        }
-        ResponseEntity<String> responseNovus = restTemplate.getForEntity(GET_NOVUS,String.class);
-        if(responseNovus.getStatusCode() == HttpStatus.OK){
-            ProductDTO[] novusProductDTOs = restTemplate.getForObject(GET_NOVUS,ProductDTO[].class);
-            novusProducts = ProductMapper.INSTANCE.productDTOArraytoProduct(novusProductDTOs);
-        }
+    public List<Product> getGre4ka(String URL) {
 
-        productList.addAll(Arrays.asList(metroProducts));
-        productList.addAll(Arrays.asList(atbProducts));
-        productList.addAll(Arrays.asList(novusProducts));
-
+        ResponseEntity<String> response = restTemplate.getForEntity(URL,String.class);
+        if(response.getStatusCode() == HttpStatus.OK){
+            ProductDTO[] ProductDTOs = restTemplate.getForObject(URL,ProductDTO[].class);
+            products = ProductMapper.INSTANCE.productDTOArraytoProduct(ProductDTOs);
+        }
+        productList.addAll(Arrays.asList(products));
         return productList;
     }
 }

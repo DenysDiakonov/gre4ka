@@ -1,0 +1,82 @@
+.details {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    &-content {
+        &-img {
+            display: flex;
+        }
+        display: block;
+        margin-bottom: 70px;
+        align-items: center;
+        margin-right: 15px;
+        width: 100%;
+        > img {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-right: 100px;
+            width: 150px;
+        }
+    }
+    &-title {
+        font-family: "RobotoMedium";
+        font-size: 46px;
+        margin-bottom: 30px;
+        line-height: 60px;
+    }
+    &-data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .details-price {
+            font-family: "RobotoBold";
+            font-size: 54px;
+            color: #89c4c2;
+        }
+        .details-weight {
+            text-align: center;
+            &-price {
+                font-family: "RobotoMedium";
+                margin-bottom: 20px;
+                font-size: 30px;
+            }
+            &-kg {
+                font-family: "RobotoRegular";
+                color: #acacac;
+                font-size: 20px;
+                margin-right: 25px;
+            }
+        }
+    }
+    &-chart {
+        padding: 0 40px;
+    }
+}
+
+.btn {
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #dfbc9a;
+    font-family: "RobotoMedium";
+    transition: all 0.7s;
+    border: 2px solid #dfbc9a;
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+.btn:hover {
+    background-color: #fff;
+}
+
+.details-weight-price {
+    font-family: "RobotoMedium";
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: 16px;
+}

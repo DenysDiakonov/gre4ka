@@ -4,7 +4,7 @@
 }
 .filters {
     position: fixed;
-    height: 300px;
+    height: 350px;
     min-width: 250px !important;
     margin-top: 50px;
     background-color: #fff;
@@ -47,4 +47,8 @@
             width: 100%;
         }
     }
+}
+
+#metro {
+    height: 30px;
 }
