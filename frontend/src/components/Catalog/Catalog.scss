@@ -10,4 +10,14 @@
     justify-content: space-around;
     margin-top: 100px;
     flex-wrap: wrap;
+    > div {
+        margin-bottom: 50px !important;
+        padding: 0 25px 15px 25px;
+    }
+}
+
+@media only screen and (max-width: 1090px) {
+    .catalog {
+        display: block;
+    }
 }

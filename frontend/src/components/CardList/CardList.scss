@@ -4,7 +4,21 @@
     flex-wrap: wrap;
     justify-content: space-between;
     > div {
-        margin-bottom: 100px !important;
-        padding: 0 50px 50px 50px;
+        padding: 0 0px 50px 0px;
+    }
+}
+
+@media only screen and (max-width: 1090px) {
+    .card-list {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card-list {
+        padding: 50px 10px;
+        > div {
+            padding: 0 0px 50px 0px;
+        }
     }
 }

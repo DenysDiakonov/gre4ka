@@ -51,7 +51,7 @@ const Filters = ({
     return (
         <div className="filters-wrap">
             <div className="filters">
-                <div>
+                <div className="filters-items">
                     <p>Фільтри</p>
                     <div>
                         <Checkbox

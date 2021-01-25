@@ -49,6 +49,40 @@
     }
 }
 
+.filters-items {
+    > div > label {
+        cursor: pointer;
+    }
+}
+
+input[type="checkbox"] {
+    display: none !important;
+}
+
 #metro {
     height: 30px;
+}
+
+@media only screen and (max-width: 1090px) {
+    .filters-wrap {
+        display: flex;
+        justify-content: center;
+    }
+    .filters {
+        width: 50%;
+        position: static;
+        .select_component {
+            width: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .filters {
+        width: 90%;
+        position: static;
+        .select_component {
+            width: 280px;
+        }
+    }
 }

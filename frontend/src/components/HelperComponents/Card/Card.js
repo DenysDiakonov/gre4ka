@@ -9,7 +9,7 @@ import silpo from "../../../assets/images/silpo.svg";
 
 const Card = ({ image, price, price_for_kilo, shop, title, weight }) => {
     return (
-        <Tilt className="Tilt" options={{ max: 25 }} style={{ height: 250, width: 250 }}>
+        <Tilt className="Tilt" options={{ max: 25 }} style={{ height: 358, width: 304 }}>
             <div className="Tilt-inner">
                 <Link to={`/${title}`} className="card">
                     <div className="img">
